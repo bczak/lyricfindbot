@@ -1,4 +1,0 @@
-interface SongResult {
-	id: string;
-
-}
