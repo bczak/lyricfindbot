@@ -17,5 +17,5 @@ export async function search(q) {
 
 async function getLyrics(song) {
 	let lyrics = await song.lyrics()
-	return lyrics.toString().replace(/\[.*?]/g, "").substring(0, 4096);
+	return (`${song.artist.name} - ${song.title}\n\n` + lyrics.toString().replace(/\[.*?]/g, "")).substring(0, 4093) + '...';
 }
