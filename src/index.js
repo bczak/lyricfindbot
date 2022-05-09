@@ -37,7 +37,6 @@ bot.on("message", async (ctx) => {
 		if (message.length > 50) {
 			return await ctx.reply("Sorry, Search text is too long");
 		}
-		console.log(message)
 		const lyrics = await search(ctx.message.text, ctx.mongodb, false);
 		await ctx.telegram.deleteMessage(ctx.chat.id, message.message_id);
 		if (lyrics.length === 0) {
