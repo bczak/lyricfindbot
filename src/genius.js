@@ -22,7 +22,7 @@ export async function search(q, mongo, lyrics = true) {
 }
 
 export async function getSong(id) {
-	const Client = new Genius.Client("mql0WC9UpE8kttr0wyNSnUK_JGnS5lWxylxAPMXP-UdM7QAx3yQa_RtKimW67rFV");
+	const Client = new Genius.Client(process.env.GENIUS_API);
 	return await Client.songs.get(parseInt(id));
 }
 
